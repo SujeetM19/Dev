@@ -1,0 +1,29 @@
+
+/* external css styling 
+
+
+PRIORITY ORDER ::
+
+INLINE CSS > INTERNAL CSS > EXTERNAL CSS
+
+External CSS is the best way for styling : 1) everything at one place
+
+*/
+
+
+li{
+    color: orange;
+}
+h2{
+    color: aqua;
+}
+td{
+    color: gray;
+}
+
+table{
+    border-collapse: collapse;
+}
+td, th{
+    border: 1px solid red;
+}
