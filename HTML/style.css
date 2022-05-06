@@ -1,0 +1,35 @@
+li{
+    list-style: none;
+    display: flex;
+}
+
+.main-img{
+    height: 800px;
+    width: 1260px;
+}
+
+.footer{
+    background-color: black;
+    height: 40px;
+}
+
+.footer>p{
+    color: white;
+}
+
+
+.navbar>nav{
+    display: flex;
+    justify-content: space-between;
+    /* display flex usme lagta hai jo saath saath tags ho adjacent */
+}
+
+ul{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.same-line{
+    display: flex;
+}
