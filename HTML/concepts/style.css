@@ -27,3 +27,13 @@ table{
 td, th{
     border: 1px solid red;
 }
+
+
+
+
+    /* vw, em, rem use karenge because hume website resposive banani hai, 
+    px uuse nahi krenge */
+
+
+    /* vw mei 10% use hoga but 
+    rem aur em mei 10x use hoga */
