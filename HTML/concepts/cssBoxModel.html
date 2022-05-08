@@ -7,9 +7,14 @@
     <title>Document</title>
     <style>
         .Box-Model{
-            background-color: green;
+            width: 300px;
+            background-color:  green; 
             margin-top : 50px;
             padding-left : 20px;
+            border: 15px solid red;
+
+            /* padding aise bhi likh skte hai padding : top right bottom left (CLOCKWISE) */
+
 
             /* padding andar se shift krta hai aur margin bahar se push kr detaa hai baaki elements ko */
 
@@ -18,9 +23,26 @@
 
             /* CSSBox model hota hai
             ---- pehle margin fir box fir padding fir content */
-                    
      
         }
+
+        
+            /* flex part */
+            .main>div{
+                width: 200px;
+                background-color: blanchedalmond;
+                padding: 10px;
+                margin: 20px;
+            }
+
+            .main{
+                display: flex;
+                flex-wrap: wrap;
+                /* size chota na ho aur next line pr chala jaye space mile to isliye hoota h flex wrap */
+                justify-content: center;
+                /* arrangement ke liye text ke */
+                
+            }
     </style>
 </head>
 <body>
@@ -31,5 +53,28 @@
     <!--    ******************** IMP      
     padding created empty space without background color while padding creates spaces with background color -->
 
+
+
+
+    <!-- *********************    FLEXBOX     ****************************** -->
+       
+    <!-- jab hume div ya kisi block elements ko inline banana ho -->
+    
+
+    <div class="main">
+
+        <div>One</div>
+        <div>Two</div>
+        <div>Three</div>
+
+
+
+
+    </div>
+
+
+
 </body>
+
+
 </html>
