@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 style="text-align: center">
+        JS
+    </h1>
+    <ul>
+        <li>JScan be good as well as bad from different visions.</li>
+        <li>JS was developed in 1995 by Netsape and to improve web pages funtionalities and then furthur on adapted by Mozilla and Microsoft Explorer</li>
+    
+    </ul>
+    <h2 style="text-align: center"> Need of JS</h2>
+    <ul>
+        <li>to implement programming languages funtionalities in our website</li>
+        <li>yaha click kro to ye hoga, implememntation of for loop, if statement...</li>
+        <li style="color: lime;">JS is a language:</li>
+        <li>reactJS and nodeJS are the technologies to build an app jinka code JS mei likha hua h</li>
+        <li>JS has been written in the script ECMA script i.e ES6 </li> 
+           
+    </ul>
+</body>
+</html>
