@@ -90,4 +90,6 @@ let addIIFE = (function add(a,b){
 })(20,30);
 
 
-console.log(addIIFE)
+console.log(addIIFE);
+
+//known for immedietely invoke purpose
