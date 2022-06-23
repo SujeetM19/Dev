@@ -2,7 +2,41 @@
  //functions can be returned
 //  functions can be passed as parameters/arguments
 
-// fucntion expression : jo functon variabble function m hai usko invoke karne ke liye hum variable() lagate hai
+
+//There are three types of funvctions
+// 1) 
+
+function calc(str, a , b ){
+    if(str == "add"){
+        return function add(){
+            console.log(a+b);
+        }
+
+    }
+
+}
+
+let returnedFunc = calc("add", 2, 4);
+returnedFunc();
+//6
+
+console.log(""+returnedFunc);
+//complete fucntion returned
+
+
+
+
+
+
+
+
+
+
+
+//2.
+
+
+//fucntion expression : jo functon variabble function m hai usko invoke karne ke liye hum variable() lagate hai
 
 // function expression
 
@@ -43,19 +77,17 @@ sayHi();
 
 // ques :=
 
-function calc(str, a , b ){
-    if(str == "add"){
-        return function add(){
-            console.log(a+b);
-        }
 
-    }
+// 3.
 
-}
 
-let returnedFunc = calc("add", 2, 4);
-returnedFunc();
-//6
+// IIFE : immedietly invoke function expression
 
-console.log(""+returnedFunc);
-//complete fucntion returned
+// As per my understanding i think that these functions might be  working best with non parametric functions
+
+let addIIFE = (function add(a,b){
+    return a+b;
+})(20,30);
+
+
+console.log(addIIFE)
