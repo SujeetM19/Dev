@@ -15,6 +15,8 @@
         <li>JS was developed in 1995 by Netsape and to improve web pages funtionalities and then furthur on adapted by Mozilla and Microsoft Explorer</li>
     
     </ul>
+
+    <h1>JS is a synchronous(line by line) and singke threaded(in a specific order) language</h1>
     <h2 style="text-align: center"> Need of JS</h2>
     <ul>
         <li>to implement programming languages funtionalities in our website</li>
