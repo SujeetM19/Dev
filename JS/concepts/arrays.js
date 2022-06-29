@@ -84,6 +84,25 @@ console.table(array2D);
 
 console.log(array2D[1][2]);
 
+// 1D arrays vs 2D arrays vs 3D arrays
+
+//        Memory Allocation:
+
+//arrays are continious memory allocation
+
+//not like var a = 10; var b=20;
+//isme a aur b ke ka memory location different ho skta h but arrays ke elements contigious hote hai.
+
+
+
+//Undefined :- data type jis bhi cheej ki koi value nahi hai.
+
+//********************No. of rows in an array :- array.length
+//*********************No. of columns in an array :- array[0].length
+
+
+
+
 
 
 
