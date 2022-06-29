@@ -84,3 +84,9 @@ console.log(trimStr.length);
 console.log(trimStr.trim());
 console.log(trimStr.trim().length);
 
+//strings are immutable, charactres of the strings cant be changed
+
+// HW :-  freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript
+// (till counting cards)
+
+
