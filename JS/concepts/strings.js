@@ -36,3 +36,51 @@ console.log(slicedStr);
 
 
 
+
+
+//Substring Methods 
+let ans = str.substr(2,6);
+console.log(ans);
+//2 se start, aage ke 6 characters returned
+
+///substr(start, length);
+
+//start se start hhoga aur aage ke length characters print karega
+
+
+
+
+//To Lower Case and to Upper case
+var str =  "Sujeet";
+
+console.log(str.toLowerCase());
+console.log(str.toUpperCase());
+
+//******************information is intaact and has nnot  been contaminated */
+
+
+
+//Concatenation method :- used to combine two strings to one and make them onne string
+
+let firstStr = "Believe";
+let SecondStr = " in Yourself";
+
+let concatenatedStr = firstStr+ SecondStr;
+console.log(concatenatedStr);
+
+//also
+
+let concatStr = firstStr.concat(SecondStr, " and me");
+
+
+
+//Trim method :- removes all the whitespaced in the starting and in the end
+
+let trimStr = "                      hello           how are you                      ";
+
+console.log(trimStr);
+console.log(trimStr.length);
+
+console.log(trimStr.trim());
+console.log(trimStr.trim().length);
+
