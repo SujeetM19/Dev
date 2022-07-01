@@ -206,8 +206,235 @@ c /=11;
 
 const myStr = "I am a \"double quoted\" string insile \"double quotes\""; // Change this line
 
+//Ques 25:- Quoting Strings with Single Quotes
+
+const myStr = '<a href="http://www.example.com" target="_blank">Link</a>';
 
 
+
+// Ques 26 :- Escape Sequences in Strings
+
+const myStr = "FirstLine\n\t\\SecondLine\nThirdLine"; // Change this line
+
+
+
+// Ques 27 :- Concatenating Strings with Plus Operator
+
+const myStr ="This is the start. " + "This is the end."; // Change this line
+
+
+
+// Ques 28 :- Concatenating Strings with the Plus Equals Operator
+
+let myStr;
+myStr = "This is the first sentence. ";
+myStr += "This is the second sentence.";
+
+
+// Ques 29:- Constructing Strings with Variables
+
+// Only change code below this line
+const myName = "Sujeet Kumar";
+const myStr = "My name is " + myName + " and I am well!";
+
+
+
+// Ques 30:- Appending Variables to Strings
+
+// Change code below this line
+const someAdjective = "really fun";
+let myStr = "Learning to code is ";
+myStr += someAdjective;
+
+
+
+// // Setup
+// Ques 31:-  Find the Length of a String
+
+let lastNameLength = 0;
+const lastName = "Lovelace";
+
+// Only change code below this line
+lastNameLength = lastName.length;
+
+
+// Setup
+// Ques 32:- Use Bracket Notation to Find the First Character in a String
+
+
+let firstLetterOfLastName = "";
+const lastName = "Lovelace";
+
+// Only change code below this line
+firstLetterOfLastName = lastName[0];
+
+// Change this line
+
+
+
+// // Setup
+// Ques 33:- Important :- Understand String Immutability
+
+
+
+let myStr = "Jello World";
+
+// Only change code below this line
+myStr = "Hello World"; // Change this line
+// Only change code above this line
+
+
+
+// Setup
+// Ques 34:- Use Bracket Notation to Find the Nth Character in a String
+
+
+const lastName = "Lovelace";
+
+// Only change code below this line
+const thirdLetterOfLastName = lastName[2]; // Change this line
+
+
+// // Setup
+// Ques 35:- Use Bracket Notation to Find the Last Character in a String
+
+
+const lastName = "Lovelace";
+
+// Only change code below this line
+const lastLetterOfLastName = lastName[lastName.length-1]; // Change this line
+
+
+
+
+// // Setup
+// Ques 36:- Use Bracket Notation to Find the Nth-to-Last Character in a String
+
+const lastName = "Lovelace";
+
+// Only change code below this line
+const secondToLastLetterOfLastName = lastName[lastName.length-2]; // Change this line
+
+
+
+// Ques 37:- Word Blanks
+
+const myNoun = "dog";
+const myAdjective = "big";
+const myVerb = "ran";
+const myAdverb = "quickly";
+
+// Only change code below this line
+const wordBlanks = myAdjective + " " + myNoun + " " + myVerb + " " + myAdverb + "."; // Change this line
+// Only change code above this line
+
+
+
+
+// Only change code below this line
+//QUes 38:- Store Multiple Values in one Variable using JavaScript Arrays
+
+const myArray = ["Sujeet", 22];
+
+
+
+// Only change code below this line
+// Ques 39 :- Nest one Array within Another Array
+
+
+const myArray = [["sujeet", "Kumar", "mishra"],[1,2,3]];
+
+
+
+// Ques 40:- Access Array Data with Indexes 
+
+const myArray = [50, 60, 70];
+var myData = myArray[0];
+
+
+
+// Setup
+
+// Ques 41:- Modify Array Data With Indexes
+
+const myArray = [18, 64, 99];
+
+myArray[0] = 45;
+
+// Only change code below this line
+
+
+
+
+// QUes 43:- Access Multi-Dimensional Arrays With Indexes
+
+
+const myArray = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9],
+    [[10, 11, 12], 13, 14],
+  ];
+  
+  const myData = myArray[2][2];
+
+
+
+  // // Setup
+// QUes 44:- Manipulate Arrays With push()
+
+
+const myArray = [["John", 23], ["cat", 2]];
+myArray.push(["dog", 3]);
+
+// Only change code below this line
+
+
+
+
+// Setup
+
+// Ques 45: Manipulate Arrays With pop()
+
+
+const myArray = [["John", 23], ["cat", 2]];
+
+// Only change code below this line
+var removedFromMyArray = myArray.pop();
+
+
+
+// // Setup
+// Ques 46:- Manipulate Arrays With shift()
+const myArray = [["John", 23], ["dog", 3]];
+
+// Only change code below this line
+var removedFromMyArray = myArray.shift();
+
+
+
+// Setup
+// Ques 47:- Manipulate Arrays With unshift()
+
+
+const myArray = [["John", 23], ["dog", 3]];
+myArray.shift();
+
+// Only change code below this line
+
+myArray.unshift(["Paul", 35]);
+
+
+
+// Ques 48:-  Shopping List
+
+
+const myList = [];
+myList.push(["maggie", 14]);
+myList.push(["pasta", 28]);
+myList.push(["samosa", 10]);
+myList.push(["kurkure", 5]);
+myList.push(["Noodles", 30]);
 
 
 
