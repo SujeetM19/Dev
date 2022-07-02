@@ -60,8 +60,8 @@ let cap = {
 }
 
 
-console.log(cap.friends);
+console.log(cap.friends); //Properties accessing
 console.log(cap.friends[0]);
 
 
-console.log(cap.sayHi());
+cap.sayHi(); //Method accessing
