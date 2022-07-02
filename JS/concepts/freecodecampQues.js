@@ -75,7 +75,7 @@ console.log(FCC, fact); // Change this line
 
 //Ques 10:- Add Two Numbers with JavaScript
 
-const sum = 10 + 10;
+//const sum = 10 + 10;
 
 
 //Ques 11:- Subtract One Number from Another with JavaScript
@@ -204,29 +204,29 @@ c /=11;
 
 //Ques 24:- Escaping Literal Quotes in Strings
 
-const myStr = "I am a \"double quoted\" string insile \"double quotes\""; // Change this line
+//const myStr = "I am a \"double quoted\" string insile \"double quotes\""; // Change this line
 
 //Ques 25:- Quoting Strings with Single Quotes
 
-const myStr = '<a href="http://www.example.com" target="_blank">Link</a>';
+//const myStr = '<a href="http://www.example.com" target="_blank">Link</a>';
 
 
 
 // Ques 26 :- Escape Sequences in Strings
 
-const myStr = "FirstLine\n\t\\SecondLine\nThirdLine"; // Change this line
+//const myStr = "FirstLine\n\t\\SecondLine\nThirdLine"; // Change this line
 
 
 
 // Ques 27 :- Concatenating Strings with Plus Operator
 
-const myStr ="This is the start. " + "This is the end."; // Change this line
+//const myStr ="This is the start. " + "This is the end."; // Change this line
 
 
 
 // Ques 28 :- Concatenating Strings with the Plus Equals Operator
 
-let myStr;
+//let myStr;
 myStr = "This is the first sentence. ";
 myStr += "This is the second sentence.";
 
@@ -235,7 +235,7 @@ myStr += "This is the second sentence.";
 
 // Only change code below this line
 const myName = "Sujeet Kumar";
-const myStr = "My name is " + myName + " and I am well!";
+//const myStr = "My name is " + myName + " and I am well!";
 
 
 
@@ -243,7 +243,7 @@ const myStr = "My name is " + myName + " and I am well!";
 
 // Change code below this line
 const someAdjective = "really fun";
-let myStr = "Learning to code is ";
+//let myStr = "Learning to code is ";
 myStr += someAdjective;
 
 
@@ -252,7 +252,7 @@ myStr += someAdjective;
 // Ques 31:-  Find the Length of a String
 
 let lastNameLength = 0;
-const lastName = "Lovelace";
+//const lastName = "Lovelace";
 
 // Only change code below this line
 lastNameLength = lastName.length;
@@ -263,7 +263,7 @@ lastNameLength = lastName.length;
 
 
 let firstLetterOfLastName = "";
-const lastName = "Lovelace";
+//const lastName = "Lovelace";
 
 // Only change code below this line
 firstLetterOfLastName = lastName[0];
@@ -289,7 +289,7 @@ myStr = "Hello World"; // Change this line
 // Ques 34:- Use Bracket Notation to Find the Nth Character in a String
 
 
-const lastName = "Lovelace";
+//const lastName = "Lovelace";
 
 // Only change code below this line
 const thirdLetterOfLastName = lastName[2]; // Change this line
@@ -299,7 +299,7 @@ const thirdLetterOfLastName = lastName[2]; // Change this line
 // Ques 35:- Use Bracket Notation to Find the Last Character in a String
 
 
-const lastName = "Lovelace";
+//const lastName = "Lovelace";
 
 // Only change code below this line
 const lastLetterOfLastName = lastName[lastName.length-1]; // Change this line
@@ -334,7 +334,7 @@ const wordBlanks = myAdjective + " " + myNoun + " " + myVerb + " " + myAdverb + 
 // Only change code below this line
 //QUes 38:- Store Multiple Values in one Variable using JavaScript Arrays
 
-const myArray = ["Sujeet", 22];
+//const myArray = ["Sujeet", 22];
 
 
 
@@ -342,13 +342,13 @@ const myArray = ["Sujeet", 22];
 // Ques 39 :- Nest one Array within Another Array
 
 
-const myArray = [["sujeet", "Kumar", "mishra"],[1,2,3]];
+//const myArray = [["sujeet", "Kumar", "mishra"],[1,2,3]];
 
 
 
 // Ques 40:- Access Array Data with Indexes 
 
-const myArray = [50, 60, 70];
+//const myArray = [50, 60, 70];
 var myData = myArray[0];
 
 
@@ -1038,10 +1038,13 @@ function sequentialSizes(val) {
   sequentialSizes(1);
 
 
-
-
-
   
+
+
+
+
+
+
 
 
 
