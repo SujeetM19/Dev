@@ -109,3 +109,10 @@ matter krti hai values jo uske andar stored h
 
 
 // *********************How the code in JS works drawn in notebook.
+
+//learned the proper execution of JS
+
+
+/////*************Imp */
+
+
