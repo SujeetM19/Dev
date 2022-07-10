@@ -15,3 +15,9 @@ console.log(b);
 //Lexical scope , Lexical environment chaining
 //jo local execution contexts hote hai wo apnne saath apne parents ki bhi lexical environment lekr chalte hai
 
+console.log("previous commits");
+console.log("previous commits");
+console.log("previous commits");
+console.log("previous commits");
+console.log("previous commits");
+console.log("previous commits");
