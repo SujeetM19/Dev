@@ -15,13 +15,26 @@ let files = input.slice(2, );
 const  fs = require("fs");
 
 
+//checking if all the given files exists or not
+for(let file in files){
+    let doesExist = fs.existsSync(files[file]);
+    if(!doesExist){
+        console.log("One or more File(s) does not exist");
+        return; 
+    }
+}
 
+
+let content = "";
 
 for(let file in files){
     let data = fs.readFileSync(files[file], 'utf-8');
-    console.log(data);
+    // console.log(data);
+    content += data + "\n";
     //console.log(files[file]);
 }
+
+//console.log(content);
 
 // for(var i=2; i<input.length; i++){
 //     let data = fs.readFileSync(input[i], "utf-8");
@@ -30,3 +43,9 @@ for(let file in files){
 // }
 
 
+let contentArr = content.split("\n");
+//console.log(contentArr); 
+
+for(var i=0; i<contentArr.length; i++){
+    console.log(i+1 + "). " + contentArr[i]);
+}

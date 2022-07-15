@@ -90,3 +90,18 @@ console.log(trimStr.trim().length);
 // (till counting cards)
 
 
+var str = "Hello my name is Sujeet Kumar";
+console.log(str);
+
+var a = str.split("l");
+// split divides the string on the basis of argument and puts them in an array
+//jaha space aa gaya waha split ho jayega
+
+/////impppp -> agar split("e") karu to 
+//["h", "llo my nam", " is Suj", "t Kumar"]
+// ban jayega
+
+// jaise hi use parameter milega split karne ka wo split kardega
+//aur banega bhi array hi
+
+console.log(a);

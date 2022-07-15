@@ -12,4 +12,4 @@ const obj = {
 }
 
 console.log(obj.subtract(5,10));
-export(obj)
+fs.export(obj)
