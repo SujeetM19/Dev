@@ -30,7 +30,8 @@ console.log(os.type());
 console.log(os.totalmem());
 
 //returns the system uuptime in number of seconds
-console.log(os.uptime()/3600);
+let uptimeInDays = os.uptime()/(3600*24);
+console.log(uptimeInDays);
 
 
 //returns the information about the currentlly effective user
