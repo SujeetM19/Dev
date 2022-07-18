@@ -1,14 +1,11 @@
-//1) node wcat.js filepath -> displays the contents of a file in a terminal
-// input sirf node se le skte hai
-
-
 let input = process.argv;
 //console.log(input);
 let files = input.slice(2, );
-//console.log(files);
-//hum slice isliye bhi kar rahe hai bcz humne extra likha hai input mei : node wcat f1.txt, ismei node wcat extra hai joki index 1 aur index 2 faltu use kr raha hai
+
 let options = [];
 given_files = [];
+
+//differentiating the options and files in different arrays
 for (let file in files){
     if(files[file][0] == "-"){
         options.push(files[file]);
@@ -18,17 +15,8 @@ for (let file in files){
     }
 }
 
-// console.log(files);
-// console.log(given_files);
-// console.log(options);
-
-
+//importing all the methods and functions of the fs module
 const  fs = require("fs");
-
-// for(let file in given_files){
-//     console.log(given_files[file]);
-// }
-
 
 //checking if all the given files exists or not
 for(let file in given_files){
@@ -39,119 +27,77 @@ for(let file in given_files){
     }
 }
 
-
+//declaring the content variable to store all the lines of code
 let content = "";
 
-// console.log(options.length);
-
-// console.log("entered");
-
+//reading the files and storing it in content variable as a string.
 for(let file in given_files){
         let data = fs.readFileSync(given_files[file], 'utf-8');
-        // console.log(data);
         content += data + "\n";
-        //console.log(files[file]);
 }
-// console.log(content);
+
+//if there are no options given then simply print the content i.e read all the lines of code and return
 if(options.length==0){
     console.log(content);
     return;
 }
-//console.log(content + "");
 
-// console.log(content);
-// console.log(options.length);
-
-// for(var i=2; i<input.length; i++){
-//     let data = fs.readFileSync(input[i], "utf-8");
-//     console.log(data);
-//     // console.log(input[i]);
-// }
-
-//console.log(contentArr); 
-
-
+//declaring the variable to store the lines finally after letting it go through options
 var finalContent = "";
 
+//creating array of each line of code splitted by every new line
 let contentArr = content.split("\n");
-// console.log(contentArr); 
 
 
-
-//-n ka kaam h ye harr line ke aage numbering karna
-
+//-n function :-  ka kaam h ye harr line ke aage numbering karna
 var n = function(){
-    console.log('entered in n');
     for(var i=0; i<contentArr.length; i++){
-        //console.log(i+1 + "). " + contentArr[i]);
         contentArr[i] = `${i+1}). ${contentArr[i]}`;
     }
-
-    // console.log(contentArr);
-    //return contentArr;
-
 }
 
-//-b numebring only on non empty lines
 
+
+//-b function:- numbering only on non empty lines using a count variable
 var b = function(){
-
     let count = 1;
-    
     for(var i=0; i<contentArr.length; i++){
-        // console.log(contentArr);
-        if(contentArr[i]!= '\r'){
-            //console.log(count + "). " + contentArr[i]);
+        if(contentArr[i]!= '\r'){ //in windows empty line is displayed as \r
             contentArr[i] = `${count}). ${contentArr[i]}`
             count++;
         }
         else{
-            //console.log(contentArr[i]);
             contentArr[i] = contentArr[i];
         }
         
     }
-//    console.log(contentArr);
-
 }
 
-
-// -s :- clear all the white space leave only one blannk line
-
+// -s :- clear white spaces, leave only one blank line if there more blank lines between 2 consecutive lines
 let s = function(){
-
     for(i=1; i<contentArr.length; i++){
         if(contentArr[i]=="\r" && (contentArr[i-1]=="\r" || contentArr[i-1] == null)){
             contentArr[i] = null;
         }
     }
-    
-    //console.table(contentArr);
-    
-    let tempArr = [];
-    
+
+    let tempArr = []; 
     for(i=0; i<contentArr.length;i++){
         if(contentArr[i] != null){
             tempArr.push(contentArr[i]);
         }
     }
-    // console.log(tempArr);
-    //console.log(contentArr);
     contentArr = tempArr;
-    // console.log(contentArr);
-
 }
 
 
-
+//checkingg for all the options that are there and aplying a switch over it.
 for(j=0; j<options.length;j++){
-    // console.log("entered");
     switch(options[j]){
         case '-s':
             s();
             break;
         case '-n':
-            //console.log("entered in n");
             n();
             break;
         case '-b':
@@ -161,9 +107,7 @@ for(j=0; j<options.length;j++){
             console.log("Please give a valid command");
             return;
     }
-    //console.log(j);
     if(j==options.length-1){
-        // console.log(contentArr);
         for (element in contentArr){
             finalContent += contentArr[element] + "\n";
         }
