@@ -71,7 +71,7 @@ if(options.length==0){
 //console.log(contentArr); 
 
 
-var finalArr = [];
+var finalContent = "";
 
 let contentArr = content.split("\n");
 // console.log(contentArr); 
@@ -81,10 +81,10 @@ let contentArr = content.split("\n");
 //-n ka kaam h ye harr line ke aage numbering karna
 
 var n = function(){
-    // console.log(contentArr)
+    console.log('entered in n');
     for(var i=0; i<contentArr.length; i++){
-        console.log(i+1 + "). " + contentArr[i]);
-        finalArr[i] = `{i+1} + "). " + {contentArr[i]}`;
+        //console.log(i+1 + "). " + contentArr[i]);
+        contentArr[i] = `${i+1}). ${contentArr[i]}`;
     }
 
     // console.log(contentArr);
@@ -101,15 +101,17 @@ var b = function(){
     for(var i=0; i<contentArr.length; i++){
         // console.log(contentArr);
         if(contentArr[i]!= '\r'){
-            console.log(count + "). " + contentArr[i]);
+            //console.log(count + "). " + contentArr[i]);
+            contentArr[i] = `${count}). ${contentArr[i]}`
             count++;
         }
         else{
-            console.log(contentArr[i]);
+            //console.log(contentArr[i]);
+            contentArr[i] = contentArr[i];
         }
         
     }
-   // return contentArr;
+//    console.log(contentArr);
 
 }
 
@@ -119,7 +121,7 @@ var b = function(){
 let s = function(){
 
     for(i=1; i<contentArr.length; i++){
-        if(contentArr[i]=="" && (contentArr[i-1]=="" || contentArr[i-1] == null)){
+        if(contentArr[i]=="\r" && (contentArr[i-1]=="\r" || contentArr[i-1] == null)){
             contentArr[i] = null;
         }
     }
@@ -133,22 +135,23 @@ let s = function(){
             tempArr.push(contentArr[i]);
         }
     }
+    // console.log(tempArr);
+    //console.log(contentArr);
     contentArr = tempArr;
-    console.log(contentArr);
-
-    //return contentArr;
+    // console.log(contentArr);
 
 }
 
 
 
-for(i=0; i<options.length;i++){
+for(j=0; j<options.length;j++){
     // console.log("entered");
-    switch(options[i]){
+    switch(options[j]){
         case '-s':
             s();
             break;
         case '-n':
+            //console.log("entered in n");
             n();
             break;
         case '-b':
@@ -156,5 +159,14 @@ for(i=0; i<options.length;i++){
             break;
         default:
             console.log("Please give a valid command");
+            return;
+    }
+    //console.log(j);
+    if(j==options.length-1){
+        // console.log(contentArr);
+        for (element in contentArr){
+            finalContent += contentArr[element] + "\n";
+        }
+        console.log(finalContent);
     }
 }
