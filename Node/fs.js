@@ -36,3 +36,7 @@ console.log(data_in_utf);
 
 //agar utf se ya kisi tarike se string mei change nahi karenge to buffer print ho jayega joki encoded hoga
 
+
+//creating a file :- fs.createFileSync(file_name);
+
+

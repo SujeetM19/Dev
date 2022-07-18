@@ -101,7 +101,13 @@ console.log(array2D[1][2]);
 //*********************No. of columns in an array :- array[0].length
 
 
+//2 new methods notes :-
+// 1) includes :- array_name.includes(variable)
+//  returns a boolean value if there exists that variable maybe string or num in that array or not
 
+
+// 2) indexOf(variable)
+// returns the index of the variable if oresent in the array
 
 
 

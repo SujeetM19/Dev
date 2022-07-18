@@ -105,3 +105,9 @@ var a = str.split("l");
 //aur banega bhi array hi
 
 console.log(a);
+//
+
+
+//process.exit() can also be used to ends the process just like return 
+//process.exit mei asynchronous oprations exit nahi honge
+
