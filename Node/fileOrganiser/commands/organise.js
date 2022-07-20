@@ -41,14 +41,18 @@ function organise(srcPath){
 
 
     for(file in allFiles){
-        ext = allFiles[file].split('.');
-        ext.push(allFiles[file]);
+        // ext = allFiles[file].split('.');
+        // ext.push(allFiles[file]);
         // console.log(typeof ext);
         // console.log(ext);
         // console.log(ext[1]);
 
-        filesAndExt.push(ext);
+        // filesAndExt.push(ext);
 
+        //Shortcut module for extension
+
+        let ext = path.extname(allFiles[file]);
+        filesAndExt.push([ext, allFiles[file]]);
     }
 
     // console.log(filesAndExt);
@@ -74,15 +78,19 @@ function organise(srcPath){
         if(!fs.existsSync(type)){
             fs.mkdirSync(type);
         }
+
+        // console.log(types[file])
+        
    
     }
 
 
-    for(var i=0; i<filesAndExt.length;i++){
-        console.log(filesAndExt[i][1]);
+    // for(var i=0; i<filesAndExt.length;i++){
+    //     // console.log(filesAndExt[i][1]);
+    //     console.log(types['media']);
 
         
-    }
+    // }
 
 
 
