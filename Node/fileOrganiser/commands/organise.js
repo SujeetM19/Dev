@@ -80,7 +80,7 @@ function organise(srcPath){
         }
 
         // console.log(types[file])
-        
+
    
     }
 
@@ -101,3 +101,5 @@ function organise(srcPath){
 
 srcPath = "C:\\Users\\sujee\\Desktop\\dev\\node\\fileOrganiser\\downloads";
 organise(srcPath);
+console.log("the theoryetical work for today has been done.")
+console.log("Topics covered are :- node till date.");

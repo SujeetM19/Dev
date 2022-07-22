@@ -40,3 +40,5 @@ console.log(data_in_utf);
 //creating a file :- fs.createFileSync(file_name);
 
 
+console.log("the theoryetical work for today has been done.")
+console.log("Topics covered are :- node till date.");
