@@ -24,8 +24,11 @@ function organise(srcPath){
 
 
     //2) to create a directory organised_files
-
+    //making organised files folder  
     let organisedFiles = path.join(srcPath, "organised_files");
+    if(!fs.existsSync(organisedFiles)){
+        fs.mkdirSync(organisedFiles);
+    }
     // console.log(organisedFiles);
 
 
@@ -37,63 +40,62 @@ function organise(srcPath){
     // fs.readdirSync basically reads the names of files present in the directory
 
 
-    let filesAndExt = [];
-
-
     for(file in allFiles){
-        // ext = allFiles[file].split('.');
-        // ext.push(allFiles[file]);
-        // console.log(typeof ext);
-        // console.log(ext);
-        // console.log(ext[1]);
 
-        // filesAndExt.push(ext);
+        //**************alag se karne ki zarurat nahi hai extensions ko extract, it should be like, ek file aayi, uska extension extract kr liya ki wo kis file type ki hai aur thikane laga diya */
 
-        //Shortcut module for extension
+        //file 0 1 2 3 4... hai
+        // console.log(file);
 
-        let ext = path.extname(allFiles[file]);
-        filesAndExt.push([ext, allFiles[file]]);
-    }
-
-    // console.log(filesAndExt);
+        // allFIles files ke naam ko store kr rahi hai basically jaise object mei arrays ko implement kiya ho
+        // console.log(allFiles);
 
 
+        //path of existing file
+        let pathOfExistingFile = path.join(srcPath, allFiles[file]);
+        // console.log(pathOfExistingFile);
 
+        isFile = fs.lstatSync(pathOfExistingFile).isFile();
+        // console.log(isFile);
 
+        if(isFile){
+            //agar wo file hai to aisa aisa karde
+            let ext = path.extname(allFiles[file]).split(".")[1];
+            // console.log(ext);
 
-//making organised files folder
+            //check the folder to which it belongs
+            let folderType = folderName(ext);
+            // console.log(folderType);
+            //return mei folder name aa gaya hai say images, document etc... jo types mei hai
 
-    if(!fs.existsSync(organisedFiles)){
-        fs.mkdirSync(organisedFiles);
-    }
-    // else{
-    //     console.log("Folder already exists");
-    // }
+            copyFilesTo(srcPath, pathOfExistingFile, folderType, allFiles[file]);
 
-
-    //making folders of images videos
-
-    for (file in types){
-        type = path.join(organisedFiles, file);
-        if(!fs.existsSync(type)){
-            fs.mkdirSync(type);
         }
 
-        // console.log(types[file])
-
-   
     }
 
+    function folderName(ext) {
+        for(let type in types){
+            if(types[type].includes(ext)){
+                return type;
+            }
+        }
+s
+    }
 
-    // for(var i=0; i<filesAndExt.length;i++){
-    //     // console.log(filesAndExt[i][1]);
-    //     console.log(types['media']);
-
+    function copyFilesTo(srcPath, nameOfExistingFile, folderName, fileName){
+        coppiedFolderName = path.join(srcPath, "organised_files", folderName);
         
-    // }
 
+        if(!fs.existsSync(coppiedFolderName)){
+            fs.mkdirSync(coppiedFolderName);
+        }
 
+        coppiedFileName = path.join(coppiedFolderName, fileName);
 
+        fs.copyFileSync(nameOfExistingFile, coppiedFileName);
+
+    }
 
 
 
@@ -101,5 +103,3 @@ function organise(srcPath){
 
 srcPath = "C:\\Users\\sujee\\Desktop\\dev\\node\\fileOrganiser\\downloads";
 organise(srcPath);
-console.log("the theoryetical work for today has been done.")
-console.log("Topics covered are :- node till date.");
