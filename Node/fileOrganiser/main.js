@@ -5,12 +5,14 @@
 let input = process.argv.slice(2);
 
 let helpFunc = require("./commands/help")
+let organiseFunc = require("./commands/organise")
 //input mein node main.js ke baad sara input as array aa jayega
 
 //console.log(input);
 // console.log(typeof input); object type ka hai
 
 command = input[0];
+path = input[1];
 
 switch(command.toLowerCase()){
     case "help":
@@ -24,11 +26,11 @@ switch(command.toLowerCase()){
         break;
 
     case "organise"||"organize":
-        //organise();
+        organiseFunc.organise(path);
         console.log("organise function executed");
-        break 
+        break;
 
     default:
-        console.log("Command not found!")
+        console.log("Command not found!");
 
 }

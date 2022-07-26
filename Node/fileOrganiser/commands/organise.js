@@ -55,6 +55,7 @@ function organise(srcPath){
         let pathOfExistingFile = path.join(srcPath, allFiles[file]);
         // console.log(pathOfExistingFile);
 
+        //lstatsync file ke baare mei information deta hai, .isfile true return krta hai agar wo file hoti h to
         isFile = fs.lstatSync(pathOfExistingFile).isFile();
         // console.log(isFile);
 
@@ -80,12 +81,13 @@ function organise(srcPath){
                 return type;
             }
         }
-s
+        return "miscellaneous";
     }
 
     function copyFilesTo(srcPath, nameOfExistingFile, folderName, fileName){
         coppiedFolderName = path.join(srcPath, "organised_files", folderName);
         
+        //if we would not have extracted fileName as an argument then we had to do path.basename(pathOfFile) ..... isse path ka last wala part i.e actually file name gets stored in the variable 
 
         if(!fs.existsSync(coppiedFolderName)){
             fs.mkdirSync(coppiedFolderName);
@@ -94,12 +96,13 @@ s
         coppiedFileName = path.join(coppiedFolderName, fileName);
 
         fs.copyFileSync(nameOfExistingFile, coppiedFileName);
-
+        //copy file mei file ka naam bhi likhna hota hai last mei.
     }
 
 
 
 }
 
-srcPath = "C:\\Users\\sujee\\Desktop\\dev\\node\\fileOrganiser\\downloads";
-organise(srcPath);
+module.exports = {
+    organise : organise
+}
