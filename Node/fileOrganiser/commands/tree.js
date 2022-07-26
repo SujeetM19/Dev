@@ -5,9 +5,21 @@ const path = require("path");
 
 function tree(srcPath){
 
+    //if the enterend url is not defined
+    if(srcPath == undefined){
+
+        console.log("Please enter a valid path");
+        return;
+    }
+
+    if(!fs.existsSync(srcPath)){
+        console.log("The entered path is invalid.")
+    }
+
     let allFiles = fs.readdirSync(srcPath);
     // console.log(allFiles);
 
+    //iterating over all the files in the array
     for (let file in allFiles){
 
         pathOfExistingFile = path.join(srcPath, allFiles[file]);
@@ -19,14 +31,18 @@ function tree(srcPath){
             console.log(pathOfExistingFile);
         }
         
-        if(!isFile){
+        //if a folder
+        else if(!isFile){
             tree(pathOfExistingFile);
         }
     }
 
 }
 
-srcPath = "C:\\Users\\sujee\\Desktop\\dev\\node\\fileOrganiser\\downloads";
 
-tree(srcPath);
+module.exports = {
+    tree : tree,
+}
+
+
 

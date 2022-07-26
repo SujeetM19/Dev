@@ -13,96 +13,83 @@ let types = {
 
 function organise(srcPath){
 
-    // 1) to check if sourcepath is correct or not
+    // to check if sourcepath is provided and is readable or not
     if(srcPath == undefined){
-
         srcPath = process.cwd();
-
     }
-    //console.log(srcPath);
 
 
 
-    //2) to create a directory organised_files
-    //making organised files folder  
+    //to create a directory organised_files 
     let organisedFiles = path.join(srcPath, "organised_files");
     if(!fs.existsSync(organisedFiles)){
         fs.mkdirSync(organisedFiles);
     }
-    // console.log(organisedFiles);
 
-
-    //3. scan the given path folder i.e downloads folder in this case 
+    //scan the given path folder i.e downloads folder in this case  and store all the files in it in an array
     let allFiles = fs.readdirSync(srcPath);
-    // console.log(allFiles);
-    // console.log(typeof allFiles);
 
-    // fs.readdirSync basically reads the names of files present in the directory
-
-
+    //iterating over all the files in the folder
     for(file in allFiles){
 
-        //**************alag se karne ki zarurat nahi hai extensions ko extract, it should be like, ek file aayi, uska extension extract kr liya ki wo kis file type ki hai aur thikane laga diya */
-
-        //file 0 1 2 3 4... hai
-        // console.log(file);
-
-        // allFIles files ke naam ko store kr rahi hai basically jaise object mei arrays ko implement kiya ho
-        // console.log(allFiles);
-
-
-        //path of existing file
+        //path of existing file in loop
         let pathOfExistingFile = path.join(srcPath, allFiles[file]);
-        // console.log(pathOfExistingFile);
 
-        //lstatsync file ke baare mei information deta hai, .isfile true return krta hai agar wo file hoti h to
+        //checking if the current element is a file or a folder
         isFile = fs.lstatSync(pathOfExistingFile).isFile();
-        // console.log(isFile);
 
+        //if the current element is a file
         if(isFile){
-            //agar wo file hai to aisa aisa karde
+
+            //checking the extension name
             let ext = path.extname(allFiles[file]).split(".")[1];
-            // console.log(ext);
 
-            //check the folder to which it belongs
+            //check the folder to which it belongs using a function folderName
             let folderType = folderName(ext);
-            // console.log(folderType);
-            //return mei folder name aa gaya hai say images, document etc... jo types mei hai
+            //it will return folder name say images, document etc... according to the object "types"
 
+            //copying files from sourcepath to our destination folder
             copyFilesTo(srcPath, pathOfExistingFile, folderType, allFiles[file]);
 
         }
 
     }
 
+    //function which returns type of the file using object "types"
     function folderName(ext) {
         for(let type in types){
             if(types[type].includes(ext)){
                 return type;
             }
         }
+        //return miscellaneous if the extension is not listed in types object
         return "miscellaneous";
     }
 
+
     function copyFilesTo(srcPath, nameOfExistingFile, folderName, fileName){
+        //making the folder path to which file have to be coppied
         coppiedFolderName = path.join(srcPath, "organised_files", folderName);
         
+        
         //if we would not have extracted fileName as an argument then we had to do path.basename(pathOfFile) ..... isse path ka last wala part i.e actually file name gets stored in the variable 
-
+        //creating the folder if it doesnt exists
         if(!fs.existsSync(coppiedFolderName)){
             fs.mkdirSync(coppiedFolderName);
         }
 
+        // including the filename in the path 
         coppiedFileName = path.join(coppiedFolderName, fileName);
 
+        // coppying the file 
         fs.copyFileSync(nameOfExistingFile, coppiedFileName);
-        //copy file mei file ka naam bhi likhna hota hai last mei.
+        
     }
-
-
 
 }
 
+
+//exporting the function
 module.exports = {
     organise : organise
 }

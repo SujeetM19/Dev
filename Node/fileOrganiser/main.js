@@ -1,33 +1,33 @@
-//entry point of command line
-
-//taking input that too leaving first two
-
+//taking input that too leaving first two using CLI
 let input = process.argv.slice(2);
 
+// using require function to import the files for each command
 let helpFunc = require("./commands/help")
 let organiseFunc = require("./commands/organise")
-//input mein node main.js ke baad sara input as array aa jayega
+let treeFunc = require("./commands/tree")
 
-//console.log(input);
-// console.log(typeof input); object type ka hai
 
+//if the number of input variables given are not as per required number of parameters
+if(input.length == 0 || input.length >2 ){
+    console.log("Please select a valid Parameters for command. use 'help' command to know more!")
+    return;
+}
+
+//storing variable for command type and path
 command = input[0];
 path = input[1];
 
 switch(command.toLowerCase()){
     case "help":
         helpFunc.help();
-        //console.log("Help function executed");
         break;
 
     case "tree":
-        //tree();
-        console.log("tree function executed");
+        treeFunc.tree(path);
         break;
 
     case "organise"||"organize":
         organiseFunc.organise(path);
-        console.log("organise function executed");
         break;
 
     default:
