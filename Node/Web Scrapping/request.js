@@ -9,15 +9,15 @@
 // -> to use data for analysis
 // -> to display data from different websites
 // -> simply we can scape data from different websites
-const fs = require("fs");
 
-const request = require("request");
-request("https://www.worldometers.info/coronavirus/", cb);
 
-function cb(err, res, body){
-    // console.log(res);
-    fs.appendFileSync("file1.txt", body);
-}
+
+// request("https://www.worldometers.info/coronavirus/", cb);
+
+// function cb(err, res, body){
+//     // console.log(res);
+//     fs.appendFileSync("file1.txt", body);
+// }
 
 
 
