@@ -1,3 +1,4 @@
+const { DiffieHellman } = require("crypto");
 const fs = require("fs");
 
 
@@ -54,6 +55,15 @@ const fs = require("fs");
 // function printError(err){
 //     console.log(err + "");
 // }
+
+
+
+//promises are syntactical sugar of callbacks
+// callbacks are also termed as callback hell
+
+// promises mei best part hota hai uski chaining
+
+// callbackshell naam se website bhi hai for btter Reference
 
 
 
