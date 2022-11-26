@@ -1,0 +1,36 @@
+
+.container{
+    font-family: 'Open Sans', sans-serif;
+}
+
+.nav{
+    background-color: #222;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    align-items: center;
+    justify-content: space-around;
+    padding: 1rem 1rem;
+    
+}
+
+.nav-items{
+    padding: 1rem;
+}
+
+@media screen and (min-width : 768px){
+    .nav{
+      
+        height: 10vh;
+    
+        flex-direction: row;
+       
+        justify-content:end;
+       
+       
+    }
+    .nav-items{
+        padding-left: 1rem;
+    }
+}
